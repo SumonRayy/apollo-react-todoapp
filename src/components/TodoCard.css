@@ -1,6 +1,6 @@
 .card-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin: 10px;
   margin-left: 20px;
   margin-left: 20px;
@@ -17,9 +17,10 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   width: 50em;
   margin: 10px;
-  text-align: left;
   border-radius: 4px;
   padding-left: 30px;
   padding-right: 30px;
@@ -30,17 +31,54 @@
 }
 
 .card-header {
+  display: flex;
+  text-align: left;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1.3em;
   font-weight: bold;
   color: #ffdfb9;
 }
 
+.card-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-icon {
+  cursor: pointer;
+  padding: 4px;
+}
+
 .card-body {
   font-size: 1em;
+  text-align: left;
   background-color: #283234;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 15px;
   padding-top: 3px;
   box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 1100px) {
+  .card-container {
+    width: 90%;
+  }
+  .card {
+    width: 30em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .card-container {
+    background-color: #282c34;
+    box-shadow: none;
+  }
+  .card {
+    width: 18em;
+  }
 }
