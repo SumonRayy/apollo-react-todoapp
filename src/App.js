@@ -7,6 +7,7 @@ import {
   from } from '@apollo/client'
 import { onError } from '@apollo/client/link/error';
 import GetTodos from './components/GetTodos';
+import TodoForm from './components/TodoForm';
 
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {  // errorLink is a function for handling graphql errors
@@ -38,6 +39,7 @@ function App() {  // App is a function that returns JSX
     <ApolloProvider client={client}>
       <div className="App">
         <h1>Apollo-React-Todo-App!</h1>
+        <TodoForm />
         <GetTodos />
       </div>
     </ApolloProvider>
